@@ -21,7 +21,7 @@ $ yarn add ModalPlugin
 - You are now able to add ```< ModalPlugin > {children} </ ModalPlugin >``` in your project
 ## Usage
 
-```ModalPlugin``` used to be working with React local State, add the following line to initialize ```toggleModal``` and ```setToggleModal``` :
+```ModalPlugin``` use to be working with React local State, add the following line to initialize ```toggleModal``` and ```setToggleModal``` :
 
 ```javascript 
 const [toggleModal, setToggleModal] = useState(false)
