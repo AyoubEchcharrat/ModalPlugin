@@ -1,0 +1,20 @@
+.close-modal {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 28px;
+    height: 40px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    opacity: 1;
+}
+
+.close-modal:after {
+    display: inline-block;
+    content: "\00d7";
+    font-size: 40px;
+    line-height: 40px;
+}
