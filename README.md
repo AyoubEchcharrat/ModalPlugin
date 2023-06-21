@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# ModalPlugin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ModalPlugin is a very tiny library that allows you to create modals quickly.
 
-## Available Scripts
+## Deployment
 
-In the project directory, you can run:
+- To use this library run
 
-### `npm start`
+using npm : 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+$ npm install --save ModalPlugin
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+or using yarn :
 
-### `npm test`
+```bash
+$ yarn add ModalPlugin
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- You are now able to add ```< ModalPlugin > {children} </ ModalPlugin >``` in your project
+## Usage
 
-### `npm run build`
+```ModalPlugin``` used to be working with React local State, add the following line to initialize ```toggleModal``` and ```setToggleModal``` :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript 
+const [toggleModal, setToggleModal] = useState(false)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Then add it as props on ModalPlugin Component :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```javascript 
+<ModalPlugin toggleModal={ toggleModal } setToggleModal={ setToggleModal } >
+/*
+* Content
+*/
+</ModalPlugin>
+```
 
-### `npm run eject`
+Informations can be passed as props to customize width, height, and background-color :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+ colorBG={ '#eee' } width={ '500px' } height={ '300px' } 
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Finally add content you want to display inside the modal, working using ```{children}``` props.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Example
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+```javascript
+import React, { useState } from 'react';
+import ModalPlugin from "./lib/ModalPlugin";
+import { createRoot } from 'react-dom/client';
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const App = () => {
+    const [toggleModal, setToggleModal] = useState(false)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    return (
+        <div>
+            <button onClick={() => setToggleModal(true)}>Open Modal</button>
+            <ModalPlugin toggleModal={toggleModal} setToggleModal={setToggleModal}
+                colorBG={'#eee'} width={'500px'} height={'300px'} >
+                <h1>Welcome !</h1>
+                <p>You are now connected.</p>
+            </ModalPlugin>
+        </div>
+    );
+}
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);
+```
