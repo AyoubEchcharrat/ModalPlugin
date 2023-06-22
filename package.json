@@ -1,6 +1,8 @@
 {
+  "homepage": "https://github.com/AyoubEchcharrat/ModalPlugin",
   "name": "tiny-modal-plugin",
   "version": "0.1.0",
+  "author": "AyoubEC",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -37,11 +39,24 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "files": [ "dist", "README.md" ],
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/AyoubEchcharrat/ModalPlugin"
-  }
+    "url": "git+https://github.com/AyoubEchcharrat/ModalPlugin.git"
+  },
+  "description": "ModalPlugin is a very tiny library that allows you to create modals quickly.",
+  "bugs": {
+    "url": "https://github.com/AyoubEchcharrat/ModalPlugin/issues"
+  },
+  "keywords": [
+    "plugin",
+    "package",
+    "modal"
+  ],
+  "license": "ISC"
 }
