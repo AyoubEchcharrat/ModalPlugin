@@ -1,6 +1,6 @@
-# ModalPlugin
+# tiny-modal-plugin@1.0.2
 
-ModalPlugin is a very tiny library that allows you to create modals quickly.
+tiny-modal-plugin is a very tiny library that allows you to create modals quickly.
 
 ## Deployment
 
@@ -9,13 +9,13 @@ ModalPlugin is a very tiny library that allows you to create modals quickly.
 using npm : 
 
 ```bash
-$ npm install --save ModalPlugin
+$ npm install --save tiny-modal-plugin
 ```
 
 or using yarn :
 
 ```bash
-$ yarn add ModalPlugin
+$ yarn add tiny-modal-plugin
 ```
 
 - You are now able to add ```< ModalPlugin > {children} </ ModalPlugin >``` in your project
