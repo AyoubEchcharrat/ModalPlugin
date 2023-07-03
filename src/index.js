@@ -10,8 +10,7 @@ const App = () => {
             <h1>Hello React</h1>
             <button onClick={() => setToggleModal(true)}>Open Modal</button>
             <ModalPlugin toggleModal={toggleModal} setToggleModal={setToggleModal}
-                colorBG={'#eee'} width={'500px'} height={'300px'} >
-                <h1>Bienvenue !</h1>
+                colorBG={'#eee'} overlay overlayColor={'#00000090'}>
                 <p>Votre inscription est validée !</p>
             </ModalPlugin>
         </div>

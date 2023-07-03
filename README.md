@@ -1,4 +1,4 @@
-# tiny-modal-plugin [version @1.0.2]
+# tiny-modal-plugin [version @1.0.3]
 
 tiny-modal-plugin is a very tiny library that allows you to create modals quickly.
 
@@ -37,11 +37,16 @@ Then add it as props on ModalPlugin Component :
 </ModalPlugin>
 ```
 
-Informations can be passed as props to customize width, height, and background-color :
+Informations can be passed as props to customize width, height, and background-color,
+
+You may also add and customize overlay that appear behind your modal. 
+Use ```overlay``` to add a grey transparent (#00000030) overlay and customize it by using ```overlayColor('your color')```
 
 ```
- colorBG={ '#eee' } width={ '500px' } height={ '300px' } 
+colorBG={ '#eee' } width={ '500px' } height={ '300px' } overlay overlayColor('#9894e1ad')
 ```
+
+
 
 Finally add content you want to display inside the modal, working using ```{children}``` props.
 
@@ -60,7 +65,7 @@ const App = () => {
         <div>
             <button onClick={() => setToggleModal(true)}>Open Modal</button>
             <ModalPlugin toggleModal={toggleModal} setToggleModal={setToggleModal}
-                colorBG={'#eee'} width={'500px'} height={'300px'} >
+                colorBG={'#eee'} width={'500px'} height={'300px'} overlay >
                 <h1>Welcome !</h1>
                 <p>You are now connected.</p>
             </ModalPlugin>
