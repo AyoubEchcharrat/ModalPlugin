@@ -12,6 +12,8 @@ const ModalPluggin = _ref => {
     toggleModal,
     setToggleModal,
     children,
+    overlay,
+    overlayColor,
     colorBG,
     width,
     height
@@ -19,6 +21,7 @@ const ModalPluggin = _ref => {
   const determinedWidth = width ? width : 'fit-content';
   const determinedHeight = height ? height : 'fit-content';
   const determinedColorBG = colorBG ? colorBG : 'white';
+  const determinedOverlayColor = overlayColor ? overlayColor : '#00000030';
   const modalContainerStyle = {
     width: determinedWidth,
     height: determinedHeight,
@@ -28,14 +31,26 @@ const ModalPluggin = _ref => {
     left: '50%',
     transform: 'translate(-50%,-50%)',
     borderRadius: '5px',
-    padding: '10px 15px 25px 15px'
+    padding: '15px 45px 20px'
   };
+  const overlayStyle = overlay ? {
+    display: 'block',
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: determinedOverlayColor,
+    position: 'absolute',
+    zIndex: 2,
+    top: 0,
+    left: 0
+  } : {};
   return toggleModal && /*#__PURE__*/_react.default.createElement("div", {
+    style: overlayStyle
+  }, /*#__PURE__*/_react.default.createElement("div", {
     style: modalContainerStyle
   }, /*#__PURE__*/_react.default.createElement("div", {
     onClick: () => setToggleModal(false),
     className: "close-modal"
-  }), children);
+  }), children));
 };
 var _default = ModalPluggin;
 exports.default = _default;

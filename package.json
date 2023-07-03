@@ -1,7 +1,7 @@
 {
   "homepage": "https://github.com/AyoubEchcharrat/ModalPlugin",
   "name": "tiny-modal-plugin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "AyoubEC",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
