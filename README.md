@@ -1,4 +1,4 @@
-# tiny-modal-plugin [version @1.0.3]
+# tiny-modal-plugin
 
 tiny-modal-plugin is a very tiny library that allows you to create modals quickly.
 
