@@ -40,10 +40,11 @@ Then add it as props on ModalPlugin Component :
 Informations can be passed as props to customize width, height, and background-color,
 
 You may also add and customize overlay that appear behind your modal. 
-Use ```overlay``` to add a grey transparent (#00000030) overlay and customize it by using ```overlayColor('your color')```
+Use ```overlay``` to add a grey transparent (#00000030) overlay and customize it by using ```overlayColor={'your-color'}```
+
 
 ```
-colorBG={ '#eee' } width={ '500px' } height={ '300px' } overlay overlayColor('#9894e1ad')
+colorBG={ '#eee' } width={ '500px' } height={ '300px' } overlay overlayColor={'#00000090'}
 ```
 
 
@@ -55,7 +56,7 @@ Finally add content you want to display inside the modal, working using ```{chil
 
 ```javascript
 import React, { useState } from 'react';
-import ModalPlugin from "./lib/ModalPlugin";
+import ModalPlugin from "tiny-modal-plugin";
 import { createRoot } from 'react-dom/client';
 
 const App = () => {
@@ -65,7 +66,7 @@ const App = () => {
         <div>
             <button onClick={() => setToggleModal(true)}>Open Modal</button>
             <ModalPlugin toggleModal={toggleModal} setToggleModal={setToggleModal}
-                colorBG={'#eee'} width={'500px'} height={'300px'} overlay >
+                colorBG={'#eee'} width={'500px'} height={'300px'} overlay overlayColor={'#00000090'}>
                 <h1>Welcome !</h1>
                 <p>You are now connected.</p>
             </ModalPlugin>
