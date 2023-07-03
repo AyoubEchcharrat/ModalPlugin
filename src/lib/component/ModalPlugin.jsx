@@ -25,7 +25,7 @@ const ModalPluggin = ({ toggleModal, setToggleModal,children, colorBG, width, he
       <div onClick={() => setToggleModal(false)} className="close-modal"></div>
       {children}
     </div>
-  )
+  );
 }
 
 export default ModalPluggin;

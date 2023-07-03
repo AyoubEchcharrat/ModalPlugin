@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ModalPlugin from "./lib/ModalPlugin";
+import ModalPlugin from "./lib/component/ModalPlugin";
 import { createRoot } from 'react-dom/client';
 
 const App = () => {
