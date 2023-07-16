@@ -25,7 +25,7 @@ const ModalPluggin = ({ toggleModal, setToggleModal, children, overlay , overlay
     width: '100vw',
     height: '100vh',
     backgroundColor: determinedOverlayColor,
-    position: 'absolute',
+    position: 'fixed',
     zIndex: 2,
     top: 0,
     left: 0,
