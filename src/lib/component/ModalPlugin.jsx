@@ -22,7 +22,7 @@ const ModalPluggin = ({ toggleModal, setToggleModal, children, overlay , overlay
 
   const overlayStyle = overlay ?   {
     display : 'block',
-    width: '100vw',
+    width: '100%',
     height: '100vh',
     backgroundColor: determinedOverlayColor,
     position: 'fixed',
